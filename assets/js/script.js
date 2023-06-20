@@ -87,7 +87,7 @@ try {
 
 
         // Construct the API URL with the current location
-        const apiUrlPrayers = `http://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2http://api.aladhan.com/v1/calendar/${year}?latitude=${latitude}&longitude=${longitude}&method=2`;
+        const apiUrlPrayers = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2https://api.aladhan.com/v1/calendar/${year}?latitude=${latitude}&longitude=${longitude}&method=2`;
 
         // Make the API request - Prayers
         fetch(apiUrlPrayers)
