@@ -29,6 +29,9 @@ switch (n_raka) {
         break;
 
     default:
+        tashahhud3rd.style.display = 'none'
+        raka3rd.style.display = 'block'
+        raka4th.style.display = 'block'
         break;
 }
 
@@ -54,43 +57,83 @@ document.getElementById('btn-sura-al-kaafiroon')
 
 /*==============================================
 → ### Salat audio - Speedy ### */
-// var audio = document.getElementById('audioPlayer');
-// var speedDisplay = document.getElementById('speedDisplay');
 
-// audio.addEventListener('loadedmetadata', function () {
-//     var speedInput = document.createElement('input');
-//     speedInput.type = 'range';
-//     speedInput.min = 0.5;
-//     speedInput.max = 2.0;
-//     speedInput.step = 0.1;
-//     speedInput.value = 1;
-//     speedInput.addEventListener('input', function () {
-//         audio.playbackRate = parseFloat(this.value);
-//         speedDisplay.textContent = 'Speed: ' + this.value + 'x';
-//     });
+var audio = new Audio('../audio/salat.mp3');
+var playPauseButton = document.getElementById('play-pause-button');
+var playPauseIcon = document.getElementById('play-pause-icon');
+var isPlaying = false;
+var speedIncreaseButton = document.getElementById('speed-increase-button');
+var speedDisplay = document.getElementById('speed-display');
+var currentSpeed = 1;
+var subtitleButton = document.getElementById('subtitle-button');
+var currentSubtitle = 0;
+var prayerTextEn = document.getElementsByClassName('prayer-text-en');
+var prayerTextArabic = document.getElementsByClassName('prayer-text-arabic');
 
-//     audio.parentNode.insertBefore(speedInput, audio.nextSibling);
-// });
+playPauseButton.addEventListener('click', () => {
+    if (isPlaying) {
+        pauseAudio();
+    } else {
+        playAudio();
+    }
+});
 
-var audio = new Audio('../audio/salat-full.m4a');
-  var playButton = document.getElementById('playButton');
-  var pauseButton = document.getElementById('pauseButton');
-  var volumeSlider = document.getElementById('volumeSlider');
-
-  playButton.addEventListener('click', function() {
+const playAudio = () => {
+    playPauseIcon.classList.remove('fa-play');
+    playPauseIcon.classList.add('fa-pause');
+    isPlaying = true;
     audio.play();
-  });
+}
 
-  pauseButton.addEventListener('click', function() {
+const pauseAudio = () => {
+    playPauseIcon.classList.remove('fa-pause');
+    playPauseIcon.classList.add('fa-play');
+    isPlaying = false;
     audio.pause();
+}
+
+speedIncreaseButton.addEventListener('click', () => {
+    currentSpeed += 0.2;
+    if (currentSpeed > 2) {
+        currentSpeed = 1;
+    }
+    audio.playbackRate = currentSpeed;
+    speedDisplay.textContent = currentSpeed.toFixed(1) + 'x';
+});
+
+const displayPrayerText = (enVisible, arabicVisible) => {
+    for (let i = 0; i < prayerTextEn.length; i++) {
+      prayerTextEn[i].style.display = enVisible ? 'block' : 'none';
+    }
+    for (let i = 0; i < prayerTextArabic.length; i++) {
+      prayerTextArabic[i].style.display = arabicVisible ? 'block' : 'none';
+    }
+  };
+  
+  subtitleButton.addEventListener('click', () => {
+    currentSubtitle++;
+  
+    if (currentSubtitle > 3) {
+      currentSubtitle = 0;
+    }
+  
+    console.log('currentSubtitle', currentSubtitle);
+  
+    switch (currentSubtitle) {
+      case 0:
+        displayPrayerText(false, false);
+        break;
+      case 1:
+        displayPrayerText(true, false);
+        break;
+      case 2:
+        displayPrayerText(false, true);
+        break;
+      case 3:
+        displayPrayerText(true, true);
+        break;
+      default:
+        displayPrayerText(false, false);
+        break;
+    }
   });
-
-  volumeSlider.addEventListener('input', function() {
-    audio.volume = parseFloat(this.value);
-  });
-
-
-
-
-
-

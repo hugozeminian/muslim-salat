@@ -113,10 +113,9 @@ li{
     -webkit-transition-duration: .2s;
     -o-transition-duration: .2s;
     background: transparent;
-
 }
 
-.button:hover{
+.button:hover, #play-pause-button:hover, #speed-increase-button:hover, #subtitle-button:hover{
     border: 2px solid var(--color_main5);
     background-color: var(--color_main5);
     color: var(--color1);
@@ -165,6 +164,34 @@ footer{
 }
 
 /*==============================================
+→ ### PLAYER ### */
+#play-pause-button{
+    border-radius: 50px;
+    border: 2px solid var(--color_font2);
+    color: var(--color_font2);
+    width: 125px;
+    margin: 0 20px;
+    padding: 10px 15px;
+    background: transparent;
+}
+
+#speed-increase-button, #subtitle-button{
+    border-radius: 50px;
+    border: 2px solid var(--color_font2);
+    color: var(--color_font2);
+    width: 75px;
+    margin: 0 20px;
+    padding: 10px 15px;
+    background: transparent;
+}
+
+#speed-display{
+    font-size: var(--font-size-s3);
+}
+
+
+
+/*==============================================
 → ### HOME PAGE ### */
 .location p{
     color: var(--color_main4);
@@ -204,7 +231,15 @@ footer{
 }
 
 .img-position-prayer{
+    height: 250px;
+}
+
+.img-position-prayer-s{
     height: 200px;
+}
+
+.img-position-prayer-xs{
+    height: 150px;
 }
 
 .sub-title{
