@@ -14,9 +14,9 @@ let raka4th = document.querySelector('[class="4th-raka"]')
 switch (n_raka) {
     case 2:
         raka3rd.style.display = 'none'
-        raka4th.style.display = 'none'     
+        raka4th.style.display = 'none'
         break;
-    
+
     case 3:
         raka3rd.style.display = 'block'
         raka4th.style.display = 'none'
@@ -40,13 +40,57 @@ let sura_al_kaafiroon = document.querySelector('.sura-al-kaafiroon')
 
 
 document.getElementById('btn-sura-al-kauthar')
-.addEventListener('click', () => {
-    sura_al_kauthar.style.display = 'block'
-    sura_al_kaafiroon.style.display = 'none'
-})
+    .addEventListener('click', () => {
+        sura_al_kauthar.style.display = 'block'
+        sura_al_kaafiroon.style.display = 'none'
+    })
 
 document.getElementById('btn-sura-al-kaafiroon')
-.addEventListener('click', () => {
-    sura_al_kauthar.style.display = 'none'
-    sura_al_kaafiroon.style.display = 'block'
-})
+    .addEventListener('click', () => {
+        sura_al_kauthar.style.display = 'none'
+        sura_al_kaafiroon.style.display = 'block'
+    })
+
+
+/*==============================================
+→ ### Salat audio - Speedy ### */
+// var audio = document.getElementById('audioPlayer');
+// var speedDisplay = document.getElementById('speedDisplay');
+
+// audio.addEventListener('loadedmetadata', function () {
+//     var speedInput = document.createElement('input');
+//     speedInput.type = 'range';
+//     speedInput.min = 0.5;
+//     speedInput.max = 2.0;
+//     speedInput.step = 0.1;
+//     speedInput.value = 1;
+//     speedInput.addEventListener('input', function () {
+//         audio.playbackRate = parseFloat(this.value);
+//         speedDisplay.textContent = 'Speed: ' + this.value + 'x';
+//     });
+
+//     audio.parentNode.insertBefore(speedInput, audio.nextSibling);
+// });
+
+var audio = new Audio('../audio/teste.mp3');
+  var playButton = document.getElementById('playButton');
+  var pauseButton = document.getElementById('pauseButton');
+  var volumeSlider = document.getElementById('volumeSlider');
+
+  playButton.addEventListener('click', function() {
+    audio.play();
+  });
+
+  pauseButton.addEventListener('click', function() {
+    audio.pause();
+  });
+
+  volumeSlider.addEventListener('input', function() {
+    audio.volume = parseFloat(this.value);
+  });
+
+
+
+
+
+
