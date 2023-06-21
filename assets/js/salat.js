@@ -72,7 +72,7 @@ document.getElementById('btn-sura-al-kaafiroon')
 //     audio.parentNode.insertBefore(speedInput, audio.nextSibling);
 // });
 
-var audio = new Audio('../audio/teste.mp3');
+var audio = new Audio('../audio/salat-full.m4a');
   var playButton = document.getElementById('playButton');
   var pauseButton = document.getElementById('pauseButton');
   var volumeSlider = document.getElementById('volumeSlider');
