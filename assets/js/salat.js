@@ -216,7 +216,7 @@ const pauseAudio = () => {
 
 speedIncreaseButton.addEventListener("click", () => {
   currentSpeed += 0.2;
-  if (currentSpeed > 5) {
+  if (currentSpeed > 2) {
     currentSpeed = 1;
   }
   audio.playbackRate = currentSpeed;
