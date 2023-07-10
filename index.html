@@ -1,114 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Salat Prayer" />
+    <meta name="keywords" content="hugo,camargo,developer,bvc" />
+    <meta name="author" content="Hugo Camargo" />
+    <script
+      src="https://kit.fontawesome.com/dd5f4a2a4e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Salat</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Salat Prayer">
-        <meta name="keywords" content="hugo,camargo,developer,bvc">
-        <meta name="author" content="Hugo Camargo">
-        <script src="https://kit.fontawesome.com/dd5f4a2a4e.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <title>Salat</title>
-    </head>
+  <body>
+    <main class="container">
+      <section id="introduction">
+        <div class="location">
+          <p>
+            <span class="city-name"></span>, <span class="country-name"></span>
+          </p>
+        </div>
+        <!--location-->
 
-    <body>
+        <div class="date">
+          <p class="formatted-date"></p>
+        </div>
 
-        <main class="container">
+        <div class="prayers">
+          <a href="./assets/pages/salat.html" id="fajr-prayer">
+            <div class="prayer">
+              <p>Fajr (فجر) - dawn</p>
+              <p class="fajr-time"></p>
+            </div>
+            <!--prayer-->
+          </a>
 
-            <section id="introduction">
+          <div class="prayer">
+            <p>
+              <i class="fas fa-sun"></i>
+              Sunrise (شروق)
+            </p>
+            <p class="sunrise-time"></p>
+          </div>
+          <!--prayer-->
 
-                <div class="location">
-                    <p><span class="city-name"></span>, <span class="country-name"></span></p>
-                </div><!--location-->
+          <a href="./assets/pages/salat.html" id="dhuhr-prayer">
+            <div class="prayer">
+              <p>Dhuhr (ظهر) - noon</p>
+              <p class="dhuhr-time"></p>
+            </div>
+            <!--prayer-->
+          </a>
 
-                <div class="date">
-                    <p class="formatted-date"></p>
-                </div>
+          <a href="./assets/pages/salat.html" id="asr-prayer">
+            <div class="prayer">
+              <p>Asr (عصر) - afternoon</p>
+              <p class="asr-time"></p>
+            </div>
+            <!--prayer-->
+          </a>
 
-                
-                <div class="prayers">
-                    <a href="./assets/pages/salat.html" id="fajr-prayer">
-                        <div class="prayer">
-                            <p>Fajr (فجر) - dawn</p>
-                            <p class="fajr-time"></p>
-                        </div><!--prayer--> 
-                    </a>
-                    
-                   
-                    <div class="prayer">
-                        <p>
-                            <i class="fas fa-sun"></i>
-                            Sunrise (شروق) </p>
-                        <p class="sunrise-time"></p>
-                    </div><!--prayer--> 
-                    
+          <a href="./assets/pages/salat.html" id="maghrib-prayer">
+            <div class="prayer">
+              <p>Maghrib (مغرب) - sunset</p>
+              <p class="maghrib-time"></p>
+            </div>
+            <!--prayer-->
+          </a>
 
-                    <a href="./assets/pages/salat.html" id="dhuhr-prayer">
-                        <div class="prayer">
-                            <p>Dhuhr (ظهر) - noon</p>
-                            <p class="dhuhr-time"></p>
-                        </div><!--prayer-->
-                    </a>
+          <a href="./assets/pages/salat.html" id="isha-prayer">
+            <div class="prayer">
+              <p>Isha (عشاء) - night</p>
+              <p class="isha-time"></p>
+            </div>
+            <!--prayer-->
+          </a>
 
-                    <a href="./assets/pages/salat.html" id="asr-prayer">
-                        <div class="prayer">
-                            <p>Asr (عصر) - afternoon</p>
-                            <p class="asr-time"></p>
-                        </div><!--prayer-->
-                    </a>
+          <div class="prayer">
+            <p>
+              <i class="fas fa-moon"></i>
+              Qiyan
+            </p>
+            <p class="qiyan-time"></p>
+          </div>
+          <!--prayer-->
+        </div>
+        <!--prayers-->
 
-                    <a href="./assets/pages/salat.html" id="maghrib-prayer">
-                        <div class="prayer">
-                            <p>Maghrib (مغرب) - sunset</p>
-                            <p class="maghrib-time"></p>
-                        </div><!--prayer-->
-                    </a>
-
-                    <a href="./assets/pages/salat.html" id="isha-prayer">
-                        <div class="prayer">
-                            <p>Isha (عشاء) - night</p>
-                            <p class="isha-time"></p>
-                        </div><!--prayer-->
-                    </a>
-                    
-                    
-                    <div class="prayer">
-                        <p>
-                            <i class="fas fa-moon"></i>
-                            Qiyan
-                        </p>
-                        <p class="qiyan-time"></p>
-                    </div><!--prayer--> 
-                    
-
-                </div><!--prayers-->
-
-                <!--
+        <!--
                 <div>
                     <iframe style="width: 182px; height: 358px; border: 1px solid #ddd;" scrolling="no" src="https://www.islamicfinder.org/prayer-widget/"> </iframe>
                 </div>
                 -->
-                
-            </section><!--introduction-->
+      </section>
+      <!--introduction-->
+    </main>
+    <!--container-->
 
-        </main><!--container-->
+    <br />
+    <footer>
+      <div class="copyright-footer">
+        <p>&copy;Hugo Vinicius Zeminian Bueno Camargo</p>
+        <p>All Rights Reserved</p>
+      </div>
+      <!--copyright-footer-->
+    </footer>
 
-        <br>
-        <footer>
-
-            <div class="copyright-footer">
-
-                <p>&copy;Hugo Vinicius Zeminian Bueno Camargo</p>
-                <p>All Rights Reserved</p>
-
-            </div><!--copyright-footer-->
-
-        </footer>
-
-        <script src="./assets/js/script.js"></script>
-
-    </body>
-
+    <script src="./assets/js/time_script.js"></script>
+  </body>
 </html>
