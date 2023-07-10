@@ -5,31 +5,42 @@
 */
 //→ ### Get the chose prayer ### */
 let n_raka
+let prayerName
 
 try {
     document.getElementById('fajr-prayer').addEventListener('click', () => {
         n_raka = 2
+        prayerName = "FAJR"
         localStorage.setItem('n_raka', n_raka);
+        localStorage.setItem('prayerName', prayerName);
     })
 
     document.querySelector('#dhuhr-prayer').addEventListener('click', () => {
         n_raka = 4
+        prayerName = "DHUHR"
         localStorage.setItem('n_raka', n_raka);
+        localStorage.setItem('prayerName', prayerName);
     })
 
     document.querySelector('#asr-prayer').addEventListener('click', () => {
         n_raka = 4
+        prayerName = "ASR"
         localStorage.setItem('n_raka', n_raka);
+        localStorage.setItem('prayerName', prayerName);
     })
 
     document.querySelector('#maghrib-prayer').addEventListener('click', () => {
         n_raka = 3
+        prayerName = "MAGHRIB"
         localStorage.setItem('n_raka', n_raka);
+        localStorage.setItem('prayerName', prayerName);
     })
 
     document.querySelector('#isha-prayer').addEventListener('click', () => {
         n_raka = 4
+        prayerName = "ISHA"
         localStorage.setItem('n_raka', n_raka);
+        localStorage.setItem('prayerName', prayerName);
     })
 } catch (error) { }
 
@@ -115,3 +126,13 @@ try {
 
 
 
+// Function to get the user's IP address
+function getUserIP() {
+    return fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => data.ip)
+        .catch(error => {
+            console.error('Error retrieving IP address:', error);
+            return null;
+        });
+}
