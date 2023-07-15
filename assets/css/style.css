@@ -156,7 +156,7 @@ main {
 }
 
 section {
-  margin: 30px;
+  margin: 10px;
   width: 100%;
 }
 
@@ -167,6 +167,11 @@ footer {
 
 /*==============================================
 → ### HOME PAGE ### */
+.location {
+  text-align: center;
+  margin: 0;
+}
+
 .location p {
   color: var(--color_main4);
   text-align: center;
@@ -177,7 +182,7 @@ footer {
 .date p {
   color: var(--color_font3);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .prayers,

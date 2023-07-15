@@ -71,68 +71,63 @@ try {
     document.querySelector('.formatted-date').textContent = formattedDate;
 } catch (error) { }
 
-// Get the current location
-try {
-    navigator.geolocation.getCurrentPosition((position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
 
-        // Construct the API URL
-        const apiUrlLocation = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+const buttonGetPrayerTimeLocation = document.getElementById("button-get-prayer-time-location")
 
-        // Make the API request - Location
-        fetch(apiUrlLocation)
-            .then((response) => response.json())
-            .then((data) => {
-                const cityName = data.address.city;
-                const countryName = data.address.country;
+buttonGetPrayerTimeLocation.addEventListener("click", () => {
 
-                try {
-                    document.querySelector('.city-name').textContent = cityName;
-                    document.querySelector('.country-name').textContent = countryName;
-                } catch (error) { }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+    // Get the current location
+    try {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
 
+            // Construct the API URL
+            const apiUrlLocation = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
 
-        // Construct the API URL with the current location
-        const apiUrlPrayers = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2https://api.aladhan.com/v1/calendar/${year}?latitude=${latitude}&longitude=${longitude}&method=2`;
+            // Make the API request - Location
+            fetch(apiUrlLocation)
+                .then((response) => response.json())
+                .then((data) => {
+                    const cityName = data.address.city;
+                    const countryName = data.address.country;
 
-        // Make the API request - Prayers
-        fetch(apiUrlPrayers)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data.data[day - 1]);
-                const { Asr, Dhuhr, Fajr, Firstthird, Imsak, Isha, Lastthird, Maghrib, Midnight, Sunrise, Sunset } = data.data[day - 1].timings
-
-                try {
-                    document.querySelector('.fajr-time').textContent = Fajr.slice(0, -5);
-                    document.querySelector('.sunrise-time').textContent = Sunrise.slice(0, -5);
-                    document.querySelector('.dhuhr-time').textContent = Dhuhr.slice(0, -5);
-                    document.querySelector('.asr-time').textContent = Asr.slice(0, -5);
-                    document.querySelector('.maghrib-time').textContent = Maghrib.slice(0, -5);
-                    document.querySelector('.isha-time').textContent = Isha.slice(0, -5);
-                    document.querySelector('.qiyan-time').textContent = Midnight.slice(0, -5);
-                } catch (error) { }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    });
-} catch (error) { }
+                    try {
+                        document.querySelector('.city-name').textContent = cityName;
+                        document.querySelector('.country-name').textContent = countryName;
+                    } catch (error) { }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
 
 
+            // Construct the API URL with the current location
+            const apiUrlPrayers = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2https://api.aladhan.com/v1/calendar/${year}?latitude=${latitude}&longitude=${longitude}&method=2`;
 
+            // Make the API request - Prayers
+            fetch(apiUrlPrayers)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data.data[day - 1]);
+                    const { Asr, Dhuhr, Fajr, Firstthird, Imsak, Isha, Lastthird, Maghrib, Midnight, Sunrise, Sunset } = data.data[day - 1].timings
 
-// Function to get the user's IP address
-function getUserIP() {
-    return fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => data.ip)
-        .catch(error => {
-            console.error('Error retrieving IP address:', error);
-            return null;
+                    try {
+                        document.querySelector('.fajr-time').textContent = Fajr.slice(0, -5);
+                        document.querySelector('.sunrise-time').textContent = Sunrise.slice(0, -5);
+                        document.querySelector('.dhuhr-time').textContent = Dhuhr.slice(0, -5);
+                        document.querySelector('.asr-time').textContent = Asr.slice(0, -5);
+                        document.querySelector('.maghrib-time').textContent = Maghrib.slice(0, -5);
+                        document.querySelector('.isha-time').textContent = Isha.slice(0, -5);
+                        document.querySelector('.qiyan-time').textContent = Midnight.slice(0, -5);
+                    } catch (error) { }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         });
+    } catch (error) { }
+
 }
+)
+
